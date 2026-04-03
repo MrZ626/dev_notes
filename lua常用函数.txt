@@ -1,0 +1,71 @@
+﻿基础函数：
+type(var)						--判断变量的类型, "nil", "number", "string", "boolean", "table", "function" 或者 "userdata"
+tonumber(arg[, base])			--若参数能转为数字则返回一个数值.可以指定转换的类型.默认为十进制整数
+tostring(arg)					--转换参数为字符串
+unpack(t)						--解压一个表.返回当前表中的所有值
+select(index, list)				--返回选择此列表中的商品数值.或者是此件物品在列表中的索引值
+next(t, index)					--返回下一个key,一对表值.用于遍历表
+loadstring("Lua code")			--分析字符串中的lua代码块并且将结果作为一个函数返回
+assert(value)					--检查一个值是否为非nil, 若不是则(如果在wow.exe打开调试命令)显示对话框以及输出错误调试信息
+error("error message",level)	--手动触发一次错误,内容是自定义的字符串信息.使用pcall() (见下面)捕捉错误
+pcall(func, arg1, arg2, ...)	--受保护调用. 执行函数内容，同时捕获所有的异常和错误
+xpcall(func, err)				--返回一个布尔值指示成功执行的函数以及调用失败的错误信息.另外运行函数或者错误的返回值
+collectgarbage()				--收集内存垃圾
+gcinfo()						--返回内存占用量(KB)
+getfenv(func or integer)		--返回此表已获取函数的堆栈结构或者堆栈等级
+setfenv(func or integer, table)	--设置此表已获取函数的堆栈结构或者堆栈等级
+setmetatable(obj, mtable)		--设置当前表的元表或者用户数据对象
+getmetatable(obj, mtable)		--获取当前的元表或者用户数据对象
+rawequal(a,b)					--不触发元方法的情况下判断两个值是否相等
+rawget(t,key)					--不触发元方法的情况下获取表的值
+rawset(t,key,value)				--不触发元方法的情况下设置表的值
+rawlen(t)						--不触发元方法的情况下获取表的长度
+
+数学函数：
+math.pi					--π
+math.floor(a)			--向下取整
+math.ceil(a)			--向上取整
+math.abs(a)				--绝对值
+math.sqrt(a)			--平方根
+math.max(a[, ...])		--返回若干值中的最大值
+math.min(a[, ...])		--返回若干值中的最小值
+math.random([a[,b]])	--返回随机数，范围是[0,1)浮点或[1,a]整数或[a,b]整数
+math.randomseed(seed)	--为随机数生成器设定种子
+math.mod(a,b)			--返回a mod b
+math.sin(rad)			--正弦
+math.cos(rad)			--余弦
+math.tan(rad)			--正切
+math.asin(a)			--反正弦
+math.acos(a)			--反余弦
+math.atan(a)			--反正切
+math.atan2(y, x)		--返回平面上向量(x,y)和x轴的夹角(范围±π)
+math.deg(rad)			--弧度转角度
+math.rad(degrees)		--角度转弧度
+math.exp(a)				--返回e^a
+math.log(a[, base])		--对数 (默认以e为底)
+math.log10(a)			--常用对数
+math.frexp(num)			--返回2为底的科学计数法的指数和尾数
+math.ldexp(a,exp)		--返回a*2^exp
+
+字符串函数：
+string.format(formatstring[, value[, ...]])			--格式化字符串
+string.gsub(str,pattern,replacement[, limitCount])	--全局替换
+string.byte(str[, index])							--转换字符串为整数值(可以指定某个字符)
+string.char(asciiCode[, ...])						--转换整数为相对应的字符
+string.find(str, pattern[, initpos[, plain]])		--在一个指定的目标字符串中搜索指定的内容(第三个参数为索引),返回其具体位置
+string.len(str)										--返回当前字符串的字符数
+string.lower(str)									--将字符串的字母转换为小写格式
+string.match(str, pattern[, initpos])				--与strfind不同的是,macth返回的是具体值,而find返回的是此值的位置
+string.rep(seed,count)								--返回一个字符串种子副本的个数
+string.sub(str, index[, endIndex])					--返回字符串指定位置的值
+string.upper(str)									--将字符串的字母转为大写格式
+
+表函数：
+table.sort(t[, comp])				--对一个数组进行排序, 还可以指定一个可选的次序函数
+table.insert(t[, pos], a)			--将一个元素插入指定的位置(默认在表的最后)
+table.remove(t[, pos])				--删除指定位置的元素(默认表最后一个)
+table.move(t1,i,j,k[, t2])			--把t1中从第i到第j的元素贴到t2(默认t1)中的第k个位置
+table.concat(t [, sep [, i [, j]]])	--把表中所有内容以字符串形式连接在一起返回，可选参数sep指定分隔符，i和j指定范围
+table.sort(t[, comp])				--对一个数组进行排序, 还可以指定一个可选的次序函数(默认排序函数为“小于号”)
+table.ipairs(t)						--返回一个遍历表的整数键的迭代器
+table.pairs(t)						--返回一个遍历表的所有键的迭代器

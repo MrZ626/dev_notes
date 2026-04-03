@@ -1,0 +1,59 @@
+总表：
+K M B T Qa Qt Sx Sp Oc No                    (max=1e30)
+( U D T Qa Qt Sx Sp O  N)
+Dc Vg Tg Qd Qi Se St Og Nn                   (max=1e300)
+Ce Dn Tc Qe Qu Sc Si Oe Ne                   (max=1e3000)
+Ml DMl TMl QaMl QtMl SxMl SpMl OMl NMl       (max=1e30000)
+DcMl VgMl TgMl QdMl QiMl SeMl StMl OgMl NnMl (max=1e300000)
+CeMl DnMl TcMl QeMl QuMl ScMl SiMl OeMl NeMl (max=1e3000000)
+
+
+
+详细：
+K M B T Qa Qt Sx Sp Oc No(e30)
+( U D T Qa Qt Sx Sp O  N)
+
+
+Dc,UDc,DDc ... NDc(e33~e60)
+Vg ~ NVg(e90)
+Tg ~ NTg
+Qd ~ NQd
+Qi ~ NQi
+Se ~ NSe
+St ~ NSt
+Og ~ NOg
+Nn ~ NNn(e300)
+
+Ce ~ NCe(e330)
+DcCe ~ NDcCe(e360)
+VgCe ~ NVgCe
+TgCe ~ NTgCe
+QdCe ~ NQdCe
+QiCe ~ NQiCe
+SeCe ~ NSeCe
+StCe ~ NStCe
+OgCe ~ NOgCe
+NnCe ~ NNnCe(e600)
+
+[Dn] Dn ~~~ NNnDn(e900)
+[Tc] Tc ~~~ NNnTc(e1200)
+[Qe] Qe ~~~ NNnQe(e1500)
+[Qu] Qu ~~~ NNnQu
+[Sc] Sc ~~~ NNnSc
+[Si] Si ~~~ NNnSi
+[Oe] Oe ~~~ NNnOe
+[Ne] Ne ~~~ NNnNe(e3000)
+
+Ml(e3003)
+Ml-U(e3006)
+...
+Ml-N(e3030)
+Ml-Dc ~~~ Ml-NNnNe(e6000)
+
+DMl ~~~ DMl-NNnNe(e9000)
+...
+NMl ~~~ NMl-NNnNe(e30000)
+
+DcMl ~~~ NNnMl-NNnNe(e300000)
+
+CeMl ~~~ NNnNeMl-NNnNe(e3000000)
