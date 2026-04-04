@@ -12,13 +12,13 @@ btrfs备份/删除快照:
 
 ## FFMPEG
 
-剪辑视频:
+视频剪辑:
 > ffmpeg -ss 00:00:00 -t 00:00:10 -i input.mp4 output.mp4
 
-裁剪画面尺寸:
+裁剪局部画面:
 > ffmpeg -i input.mp4 -vf crop=w:h(:x:y) output.mp4
 
-缩放画面尺寸:
+整体缩放:
 > ffmpeg -i input.mp4 -vf scale=iw*.5:ih*.5 output.mp4
 
 变速:
@@ -29,12 +29,16 @@ btrfs备份/删除快照:
 > ffmpeg -i input.mp4 -b:v 256k -crf 0 output.mp4
 
 调整音量:
-> ffmpeg -i input.wav -af "volume=2" output.awv
+> ffmpeg -i input.wav -af "volume=2" output.wav
 
 ## ADB
 
 查看已连接设备:
 > adb devices
+
+模拟操作:
+> adb shell input tap x y
+> adb shell input swipe x1 y1 x2 y2 duration(ms)
 
 安装apk:
 > adb install -r xxx.apk
@@ -48,18 +52,6 @@ btrfs备份/删除快照:
 传输文件:
 > adb push xxx.apk /sdcard/...  
 > adb pull /sdcard/oculus/screenshots screenshots
-
-模拟操作:
-> adb shell input tap x y
-> adb shell input swipe x1 y1 x2 y2 duration(ms)
-
-读/写系统设置:
-> adb shell settings get/put system/global KEY (VALUE)  
-> 休眠时间 adb shell settings put system screen_off_timeout 36000000  
-> 屏幕亮度 adb shell settings put system screen_brightness 255  
-> 动画速度 adb shell settings put global window_animation_scale 10  
-> 动画速度 adb shell settings put global transition_animation_scale 10  
-> 动画速度 adb shell settings put global animator_duration_scale 10
 
 安装分卷apk:
 > *先传文件*  
@@ -121,6 +113,14 @@ btrfs备份/删除快照:
 │   │   │   ├── replay
 │   │   │   ├── record
 │   │   │   ├── ...
+
+读/写系统设置:
+> adb shell settings get/put system/global KEY (VALUE)  
+> 休眠时间 adb shell settings put system screen_off_timeout 36000000  
+> 屏幕亮度 adb shell settings put system screen_brightness 255  
+> 动画速度 adb shell settings put global window_animation_scale 10  
+> 动画速度 adb shell settings put global transition_animation_scale 10  
+> 动画速度 adb shell settings put global animator_duration_scale 10
 
 ## LIBINPUT
 
