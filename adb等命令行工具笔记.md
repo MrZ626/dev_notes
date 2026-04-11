@@ -9,27 +9,26 @@ btrfs备份/删除快照:
 > sudo btrfs subvol snapshot -r / snapshot_25mmdd  
 > sudo btrfs subvol delete snapshot_25mmdd
 
-
 ## FFMPEG
 
 视频剪辑:
-> ffmpeg -ss 00:00:00 -t 00:00:10 -i input.mp4 output.mp4
+> ffmpeg -i in.mp4 -ss 00:00:00 -t 00:00:10 out.mp4
 
 裁剪局部画面:
-> ffmpeg -i input.mp4 -vf crop=w:h(:x:y) output.mp4
+> ffmpeg -i in.mp4 -vf crop=w:h(:x:y) out.mp4
 
 整体缩放:
-> ffmpeg -i input.mp4 -vf scale=iw*.5:ih*.5 output.mp4
+> ffmpeg -i in.mp4 -vf scale=iw*.5:ih*.5 out.mp4
 
 变速:
-> ffmpeg -i input.mp4 -filter:v "setpts=0.5*PTS" output.mp4
+> ffmpeg -i in.mp4 -filter:v "setpts=0.5*PTS" out.mp4
 
 调整码率:
-> ffmpeg -i input.mp4 -b:v 1m output.mp4
-> ffmpeg -i input.mp4 -b:v 256k -crf 0 output.mp4
+> ffmpeg -i in.mp4 -b:v 1m out.mp4
+> ffmpeg -i in.mp4 -b:v 256k -crf 0 out.mp4
 
 调整音量:
-> ffmpeg -i input.wav -af "volume=2" output.wav
+> ffmpeg -i in.wav -af "volume=2" out.wav
 
 ## ADB
 
