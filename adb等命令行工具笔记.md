@@ -63,7 +63,9 @@ btrfs备份/删除快照:
 > pm install-write 1234567890 1.apk /data/local/tmp/1.apk  
 > pm install-write 1234567890 2.apk /data/local/tmp/2.apk  
 > pm install-write 1234567890 3.apk /data/local/tmp/3.apk  
-> pm install-commit 1234567890
+> pm install-commit 1234567890  
+> *整不明白不想搞了推荐用这个确认结束安装（不结束也只会临时占内存，重启一定自动清理）*  
+> pm install-abandon 1234567890
 
 安卓已安装应用目录结构:
 /data/app/com.example.myapp/
